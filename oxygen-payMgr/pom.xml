@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.oxygen</groupId>
+		<artifactId>oxygen</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>oxygen-payMgr</artifactId>
+	<packaging>pom</packaging>
+	<name>payMgr</name>
+	<modules>
+		<module>oxygen-payMgr-common</module>
+		<module>oxygen-payMgr-api</module>
+		<module>oxygen-payMgr-service</module>
+		<module>oxygen-payMgr-webServer</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<failOnError>true</failOnError>
+					<verbose>true</verbose>
+					<fork>true</fork>
+					<compilerArgument>-nowarn</compilerArgument>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

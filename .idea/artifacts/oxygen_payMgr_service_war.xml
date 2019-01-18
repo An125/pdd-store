@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oxygen-payMgr-service:war">
+    <output-path>$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-service/target</output-path>
+    <root id="archive" name="oxygen-payMgr-service-1.0.0.war">
+      <element id="artifact" artifact-name="oxygen-payMgr-service:war exploded" />
+    </root>
+  </artifact>
+</component>

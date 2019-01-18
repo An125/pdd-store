@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oxygen-manage-webServer:war">
+    <output-path>$PROJECT_DIR$/oxygen-manage/oxygen-manage-webServer/target</output-path>
+    <root id="archive" name="oxygen-manage-webServer.war">
+      <element id="artifact" artifact-name="oxygen-manage-webServer:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oxygen.shop.dao.mapper.ShoppingMapper" >
+  <resultMap id="BaseResultMap" type="com.oxygen.shop.common.po.Shopping" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="product" property="product" jdbcType="VARCHAR" />
+    <result column="Original_price" property="originalPrice" jdbcType="VARCHAR" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="Rates" property="rates" jdbcType="VARCHAR" />
+    <result column="quantity" property="quantity" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="quotation_id" property="quotationId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_id, product, Original_price, location, Rates, quantity, path, date, quotation_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.oxygen.shop.common.po.ShoppingExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from shopping
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from shopping
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from shopping
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.oxygen.shop.common.po.ShoppingExample" >
+    delete from shopping
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.oxygen.shop.common.po.Shopping" >
+    insert into shopping (id, user_id, product, 
+      Original_price, location, Rates, 
+      quantity, path, date, 
+      quotation_id)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{product,jdbcType=VARCHAR}, 
+      #{originalPrice,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{rates,jdbcType=VARCHAR}, 
+      #{quantity,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, 
+      #{quotationId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oxygen.shop.common.po.Shopping" >
+    insert into shopping
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="product != null" >
+        product,
+      </if>
+      <if test="originalPrice != null" >
+        Original_price,
+      </if>
+      <if test="location != null" >
+        location,
+      </if>
+      <if test="rates != null" >
+        Rates,
+      </if>
+      <if test="quantity != null" >
+        quantity,
+      </if>
+      <if test="path != null" >
+        path,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="quotationId != null" >
+        quotation_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="product != null" >
+        #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="originalPrice != null" >
+        #{originalPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="rates != null" >
+        #{rates,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null" >
+        #{quantity,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationId != null" >
+        #{quotationId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.oxygen.shop.common.po.ShoppingExample" resultType="java.lang.Integer" >
+    select count(*) from shopping
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update shopping
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.product != null" >
+        product = #{record.product,jdbcType=VARCHAR},
+      </if>
+      <if test="record.originalPrice != null" >
+        Original_price = #{record.originalPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.location != null" >
+        location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rates != null" >
+        Rates = #{record.rates,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quantity != null" >
+        quantity = #{record.quantity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.path != null" >
+        path = #{record.path,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quotationId != null" >
+        quotation_id = #{record.quotationId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update shopping
+    set id = #{record.id,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      product = #{record.product,jdbcType=VARCHAR},
+      Original_price = #{record.originalPrice,jdbcType=VARCHAR},
+      location = #{record.location,jdbcType=VARCHAR},
+      Rates = #{record.rates,jdbcType=VARCHAR},
+      quantity = #{record.quantity,jdbcType=VARCHAR},
+      path = #{record.path,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      quotation_id = #{record.quotationId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oxygen.shop.common.po.Shopping" >
+    update shopping
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="product != null" >
+        product = #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="originalPrice != null" >
+        Original_price = #{originalPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="rates != null" >
+        Rates = #{rates,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null" >
+        quantity = #{quantity,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationId != null" >
+        quotation_id = #{quotationId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oxygen.shop.common.po.Shopping" >
+    update shopping
+    set user_id = #{userId,jdbcType=INTEGER},
+      product = #{product,jdbcType=VARCHAR},
+      Original_price = #{originalPrice,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      Rates = #{rates,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      quotation_id = #{quotationId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

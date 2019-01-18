@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oxygen.shop.rpc.service.impl.user.loginRegister.xml.user">
+	<!-- 修改 --> 
+	<update id="update_add" parameterType="java.util.Map">
+		update user set txpath=#{txpath} where id=#{user_id}
+	</update>
+	<!-- 查询商户id 店名 -->
+	<select id="superior_id" parameterType="user" resultType="user">
+		select id,username,Depth,path,location from user where Generated=#{invitation}
+	</select>
+	<!-- 修改用户 -->
+	<update id="update_user" parameterType="java.util.Map">
+		update user set location=#{location},Depth=#{Depth},superior=#{username},path=#{Path},invitation=#{invitation} where id=#{user_id} and mobile=#{mobile}
+	</update>
+	<delete id="delete_shopping" parameterType="user">
+		delete from shopping where user_id=#{user_id}
+	</delete>
+</mapper>

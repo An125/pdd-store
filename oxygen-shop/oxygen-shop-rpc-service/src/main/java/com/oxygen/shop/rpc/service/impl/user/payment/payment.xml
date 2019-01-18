@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oxygen.shop.rpc.service.impl.user.payment.xml.order_form">
+	<!-- 数据写入订单表 -->
+	<insert id="add_order" parameterType="java.util.Map">
+		insert into order_form
+		(username,user_id,product,path,product_id,merchants,price,quantity,date,order_form,state,Method,address,address_id)values(#{username},
+				#{user_id}, #{product}, #{path}, #{product_id}, #{merchants},#{price},#{quantity},#{date},#{order_form},#{state},#{Method},#{address},#{address_id})
+	</insert>
+<!--从购物车删除
+	<delete id="delete_product" parameterType="java.util.Map">
+		delete from shopping where user_id=#{user_id} and id=#{id}
+	</delete>
+	修改产品参数
+	<update id="update_product" parameterType="java.util.Map">
+		update shopping set quantity=#{quantity} where product=#{product} and user_id=#{user_id}
+	</update>
+	在购物车修改产品参数
+	<update id="update_shopping" parameterType="java.util.Map">
+		update shopping set quantity=#{quantity} where user_id=#{user_id} and id=#{id}
+	</update>
+	查询是否有该产品
+	<select id="select_product" parameterType="java.util.Map"
+		 resultType="Shopping"> 
+		select * from shopping where user_id=#{user_id} and product=#{product}
+	</select>
+	查询全部购物车
+	<select id="select_shopping" parameterType="java.util.Map"
+		 resultType="Shopping"> 
+		select * from shopping where user_id=#{user_id}
+	</select> -->
+</mapper>

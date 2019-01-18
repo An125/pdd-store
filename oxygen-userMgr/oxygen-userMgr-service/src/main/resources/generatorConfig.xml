@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- 配置文件路径 -->
+	<properties resource="generatorConfig.properties" />
+	<!--数据库驱动包路径 -->
+	<classPathEntry location="${drive.class.path}" />
+
+	<context id="MySQLTables" targetRuntime="MyBatis3">
+
+		<!--关闭注释 -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<!--数据库连接信息 -->
+		<jdbcConnection driverClass="${jdbc.driver}"
+			connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
+		</jdbcConnection>
+
+		<!--生成的 po 包路径 -->
+		<javaModelGenerator targetPackage="${po.package}"
+			targetProject="${target.project}">
+			<property name="enableSubPackages" value="ture" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!--生成 xml mapper 文件 路径 -->
+		<sqlMapGenerator targetPackage="${mapper.package}"
+			targetProject="${target.project}">
+			<property name="enableSubPackages" value="ture" />
+		</sqlMapGenerator>
+
+		<!-- 生成的Mapper接口 的包路径 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="${mapper.package}" targetProject="${target.project}">
+			<property name="enableSubPackages" value="ture" />
+		</javaClientGenerator>
+
+		<!--对应数据库表名 -->
+        <table tableName="store_shop" ></table>
+        <table tableName="store_shop_user" ></table>
+        <table tableName="store_user" >
+        	<generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="store_user_address" >
+        	<generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="store_user_record" >
+        	<generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+	</context>
+</generatorConfiguration>

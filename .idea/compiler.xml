@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="oxygen-admin" />
+        <module name="oxygen-appVersion-api" />
+        <module name="oxygen-appVersion-common" />
+        <module name="oxygen-appVersion-service" />
+        <module name="oxygen-appVersion-webServer" />
+        <module name="oxygen-common" />
+        <module name="oxygen-common-core" />
+        <module name="oxygen-community-api" />
+        <module name="oxygen-community-common" />
+        <module name="oxygen-community-service" />
+        <module name="oxygen-community-webServer" />
+        <module name="oxygen-manage-api" />
+        <module name="oxygen-manage-common" />
+        <module name="oxygen-manage-service" />
+        <module name="oxygen-manage-shiro" />
+        <module name="oxygen-manage-webServer" />
+        <module name="oxygen-orderMgr-api" />
+        <module name="oxygen-orderMgr-common" />
+        <module name="oxygen-orderMgr-service" />
+        <module name="oxygen-orderMgr-webServer" />
+        <module name="oxygen-pay-common" />
+        <module name="oxygen-pay-dao" />
+        <module name="oxygen-pay-rpc-api" />
+        <module name="oxygen-pay-rpc-service" />
+        <module name="oxygen-pay-web" />
+        <module name="oxygen-pay-wx-sdk" />
+        <module name="oxygen-payMgr-api" />
+        <module name="oxygen-payMgr-common" />
+        <module name="oxygen-payMgr-service" />
+        <module name="oxygen-payMgr-webServer" />
+        <module name="oxygen-shop-common" />
+        <module name="oxygen-shop-dao" />
+        <module name="oxygen-shop-filter" />
+        <module name="oxygen-shop-rpc-api" />
+        <module name="oxygen-shop-rpc-service" />
+        <module name="oxygen-shop-server" />
+        <module name="oxygen-shopMgr-api" />
+        <module name="oxygen-shopMgr-common" />
+        <module name="oxygen-shopMgr-service" />
+        <module name="oxygen-shopMgr-webServer" />
+        <module name="oxygen-shoppingCart-api" />
+        <module name="oxygen-shoppingCart-common" />
+        <module name="oxygen-shoppingCart-service" />
+        <module name="oxygen-shoppingCart-webServer" />
+        <module name="oxygen-upms-common" />
+        <module name="oxygen-upms-dao" />
+        <module name="oxygen-upms-rpc-api" />
+        <module name="oxygen-upms-rpc-service" />
+        <module name="oxygen-upms-server" />
+        <module name="oxygen-upms-shiro" />
+        <module name="oxygen-userMgr-api" />
+        <module name="oxygen-userMgr-common" />
+        <module name="oxygen-userMgr-service" />
+        <module name="oxygen-userMgr-webServer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="oxygen" target="1.8" />
+      <module name="oxygen-admin" target="1.8" />
+      <module name="oxygen-appVersion" target="1.8" />
+      <module name="oxygen-appVersion-api" target="1.8" />
+      <module name="oxygen-appVersion-common" target="1.8" />
+      <module name="oxygen-appVersion-service" target="1.8" />
+      <module name="oxygen-appVersion-webServer" target="1.8" />
+      <module name="oxygen-common" target="1.8" />
+      <module name="oxygen-common-core" target="1.8" />
+      <module name="oxygen-community" target="1.8" />
+      <module name="oxygen-community-api" target="1.8" />
+      <module name="oxygen-community-common" target="1.8" />
+      <module name="oxygen-community-service" target="1.8" />
+      <module name="oxygen-community-webServer" target="1.8" />
+      <module name="oxygen-manage" target="1.8" />
+      <module name="oxygen-manage-api" target="1.8" />
+      <module name="oxygen-manage-common" target="1.8" />
+      <module name="oxygen-manage-service" target="1.8" />
+      <module name="oxygen-manage-shiro" target="1.8" />
+      <module name="oxygen-manage-webServer" target="1.8" />
+      <module name="oxygen-orderMgr" target="1.8" />
+      <module name="oxygen-orderMgr-api" target="1.8" />
+      <module name="oxygen-orderMgr-common" target="1.8" />
+      <module name="oxygen-orderMgr-service" target="1.8" />
+      <module name="oxygen-orderMgr-webServer" target="1.8" />
+      <module name="oxygen-pay" target="1.8" />
+      <module name="oxygen-pay-common" target="1.8" />
+      <module name="oxygen-pay-dao" target="1.8" />
+      <module name="oxygen-pay-rpc-api" target="1.8" />
+      <module name="oxygen-pay-rpc-service" target="1.8" />
+      <module name="oxygen-pay-web" target="1.8" />
+      <module name="oxygen-pay-wx-sdk" target="1.8" />
+      <module name="oxygen-payMgr" target="1.8" />
+      <module name="oxygen-payMgr-api" target="1.8" />
+      <module name="oxygen-payMgr-common" target="1.8" />
+      <module name="oxygen-payMgr-service" target="1.8" />
+      <module name="oxygen-payMgr-webServer" target="1.8" />
+      <module name="oxygen-shop" target="1.8" />
+      <module name="oxygen-shop-common" target="1.8" />
+      <module name="oxygen-shop-dao" target="1.8" />
+      <module name="oxygen-shop-filter" target="1.8" />
+      <module name="oxygen-shop-rpc-api" target="1.8" />
+      <module name="oxygen-shop-rpc-service" target="1.8" />
+      <module name="oxygen-shop-server" target="1.8" />
+      <module name="oxygen-shopMgr" target="1.8" />
+      <module name="oxygen-shopMgr-api" target="1.8" />
+      <module name="oxygen-shopMgr-common" target="1.8" />
+      <module name="oxygen-shopMgr-service" target="1.8" />
+      <module name="oxygen-shopMgr-webServer" target="1.8" />
+      <module name="oxygen-shoppingCart" target="1.8" />
+      <module name="oxygen-shoppingCart-api" target="1.8" />
+      <module name="oxygen-shoppingCart-common" target="1.8" />
+      <module name="oxygen-shoppingCart-service" target="1.8" />
+      <module name="oxygen-shoppingCart-webServer" target="1.8" />
+      <module name="oxygen-upms" target="1.8" />
+      <module name="oxygen-upms-common" target="1.8" />
+      <module name="oxygen-upms-dao" target="1.8" />
+      <module name="oxygen-upms-rpc-api" target="1.8" />
+      <module name="oxygen-upms-rpc-service" target="1.8" />
+      <module name="oxygen-upms-server" target="1.8" />
+      <module name="oxygen-upms-shiro" target="1.8" />
+      <module name="oxygen-userMgr" target="1.8" />
+      <module name="oxygen-userMgr-api" target="1.8" />
+      <module name="oxygen-userMgr-common" target="1.8" />
+      <module name="oxygen-userMgr-service" target="1.8" />
+      <module name="oxygen-userMgr-webServer" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,437 @@
+[INFO ][20180226 15:49:46,481][AbstractApplicationContext:582] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@44e81672: startup date [Mon Feb 26 15:49:46 CST 2018]; root of context hierarchy
+[INFO ][20180226 15:49:46,542][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180226 15:49:46,791][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180226 15:49:46,871][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180226 15:49:46,914][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180226 15:49:46,958][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-transaction.xml]
+[INFO ][20180226 15:49:47,171][PropertiesLoaderSupport:172] Loading properties file from class path resource [db.properties]
+[ERROR][20180226 15:49:47,642][MapperFactoryBean:82] Error while adding the mapper 'interface com.pdd.userMgr.service.mapper.StoreUserAddressMapper' to configuration.
+org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1648)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1585)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:552)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at dubbo.test.DubboProvider.main(DubboProvider.java:20)
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 34 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 38 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 40 more
+[WARN ][20180226 15:49:47,650][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'storeUserAddressService': Unsatisfied dependency expressed through field 'storeUserAddressMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeUserAddressMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreUserAddressMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+[ERROR][20180226 15:49:47,653][DubboProvider:23] == DubboProvider context start error:
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'storeUserAddressService': Unsatisfied dependency expressed through field 'storeUserAddressMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeUserAddressMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreUserAddressMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:552)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at dubbo.test.DubboProvider.main(DubboProvider.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeUserAddressMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreUserAddressMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1589)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 15 more
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1648)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1585)
+	... 25 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	... 28 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 34 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.service.po.StoreUserAddress'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 38 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.service.po.StoreUserAddress
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 40 more
+[INFO ][20180226 15:53:55,997][AbstractApplicationContext:582] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@44e81672: startup date [Mon Feb 26 15:53:55 CST 2018]; root of context hierarchy
+[INFO ][20180226 15:53:56,061][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180226 15:53:56,262][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180226 15:53:56,297][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180226 15:53:56,328][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180226 15:53:56,358][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-transaction.xml]
+[INFO ][20180226 15:53:56,559][PropertiesLoaderSupport:172] Loading properties file from class path resource [db.properties]
+[ERROR][20180226 15:53:57,045][MapperFactoryBean:82] Error while adding the mapper 'interface com.pdd.userMgr.service.mapper.StoreUserAddressMapper' to configuration.
+org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1648)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1585)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:552)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at dubbo.test.DubboProvider.main(DubboProvider.java:20)
+Caused by: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:844)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:816)
+	at org.apache.ibatis.session.Configuration.addResultMap(Configuration.java:598)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addResultMap(MapperBuilderAssistant.java:214)
+	at org.apache.ibatis.builder.ResultMapResolver.resolve(ResultMapResolver.java:47)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:285)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 34 more
+[WARN ][20180226 15:53:57,050][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'storeUserAddressService': Unsatisfied dependency expressed through field 'storeUserAddressMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeUserAddressMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreUserAddressMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+[ERROR][20180226 15:53:57,052][DubboProvider:23] == DubboProvider context start error:
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'storeUserAddressService': Unsatisfied dependency expressed through field 'storeUserAddressMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeUserAddressMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreUserAddressMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:552)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at dubbo.test.DubboProvider.main(DubboProvider.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeUserAddressMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreUserAddressMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1589)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 15 more
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1648)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1585)
+	... 25 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	... 28 more
+Caused by: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.pdd.userMgr.service.mapper.StoreUserAddressMapper.BaseResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:844)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:816)
+	at org.apache.ibatis.session.Configuration.addResultMap(Configuration.java:598)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addResultMap(MapperBuilderAssistant.java:214)
+	at org.apache.ibatis.builder.ResultMapResolver.resolve(ResultMapResolver.java:47)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:285)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 34 more
+[INFO ][20180226 16:28:05,633][AbstractApplicationContext:582] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@44e81672: startup date [Mon Feb 26 16:28:05 CST 2018]; root of context hierarchy
+[INFO ][20180226 16:28:05,692][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180226 16:28:05,905][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180226 16:28:05,965][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180226 16:28:06,000][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180226 16:28:06,051][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-transaction.xml]
+[INFO ][20180226 16:28:06,282][PropertiesLoaderSupport:172] Loading properties file from class path resource [db.properties]
+[ERROR][20180226 16:28:06,605][MapperFactoryBean:82] Error while adding the mapper 'interface com.pdd.userMgr.service.mapper.StoreShopMapper' to configuration.
+org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1648)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1585)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:552)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at dubbo.test.DubboProvider.main(DubboProvider.java:20)
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 34 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 38 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 40 more
+[WARN ][20180226 16:28:06,613][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'storeUserService': Unsatisfied dependency expressed through field 'storeShopMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeShopMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreShopMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+[ERROR][20180226 16:28:06,615][DubboProvider:23] == DubboProvider context start error:
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'storeUserService': Unsatisfied dependency expressed through field 'storeShopMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeShopMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreShopMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:552)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at dubbo.test.DubboProvider.main(DubboProvider.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storeShopMapper' defined in file [G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes\com\pdd\userMgr\service\mapper\StoreShopMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1589)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1136)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1064)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 15 more
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83)
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1648)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1585)
+	... 25 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713)
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80)
+	... 28 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 34 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.pdd.userMgr.common.po.StoreShop'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 38 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.pdd.userMgr.common.po.StoreShop
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 40 more
+[INFO ][20180226 16:29:13,066][AbstractApplicationContext:582] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@44e81672: startup date [Mon Feb 26 16:29:13 CST 2018]; root of context hierarchy
+[INFO ][20180226 16:29:13,126][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180226 16:29:13,327][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180226 16:29:13,364][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180226 16:29:13,397][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180226 16:29:13,430][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-transaction.xml]
+[INFO ][20180226 16:29:13,624][PropertiesLoaderSupport:172] Loading properties file from class path resource [db.properties]
+[WARN ][20180226 16:29:14,368][AbstractApplicationContext:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.pdd.userMgr.api.service.StoreUserAddressService': Cannot resolve reference to bean 'storeUserAddressService' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'storeUserAddressService' available
+[ERROR][20180226 16:29:14,373][DubboProvider:23] == DubboProvider context start error:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.pdd.userMgr.api.service.StoreUserAddressService': Cannot resolve reference to bean 'storeUserAddressService' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'storeUserAddressService' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1492)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:552)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at dubbo.test.DubboProvider.main(DubboProvider.java:20)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'storeUserAddressService' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	... 15 more
+[INFO ][20180226 16:29:49,013][AbstractApplicationContext:582] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@44e81672: startup date [Mon Feb 26 16:29:49 CST 2018]; root of context hierarchy
+[INFO ][20180226 16:29:49,072][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180226 16:29:49,283][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180226 16:29:49,316][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180226 16:29:49,350][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180226 16:29:49,376][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-transaction.xml]
+[INFO ][20180226 16:29:49,568][PropertiesLoaderSupport:172] Loading properties file from class path resource [db.properties]
+[INFO ][20180226 16:29:50,332][ServiceBean:107]  [DUBBO] The service ready on spring started. service: com.pdd.userMgr.api.service.StoreUserService, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,458][ServiceConfig:510]  [DUBBO] Export dubbo service com.pdd.userMgr.api.service.StoreUserService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,459][ServiceConfig:470]  [DUBBO] Export dubbo service com.pdd.userMgr.api.service.StoreUserService to url dubbo://192.168.1.118:20880/com.pdd.userMgr.api.service.StoreUserService?anyhost=true&application=oxygen-userMgr-service&dubbo=2.5.3&interface=com.pdd.userMgr.api.service.StoreUserService&methods=addStoreUser&pid=7212&side=provider&timestamp=1519633790358, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,459][ServiceConfig:481]  [DUBBO] Register dubbo service com.pdd.userMgr.api.service.StoreUserService url dubbo://192.168.1.118:20880/com.pdd.userMgr.api.service.StoreUserService?anyhost=true&application=oxygen-userMgr-service&dubbo=2.5.3&interface=com.pdd.userMgr.api.service.StoreUserService&methods=addStoreUser&pid=7212&side=provider&timestamp=1519633790358 to registry registry://192.168.1.120:2181/com.alibaba.dubbo.registry.RegistryService?application=oxygen-userMgr-service&dubbo=2.5.3&pid=7212&registry=zookeeper&timestamp=1519633790338, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,755][AbstractServer:69]  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.1.118:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,777][AbstractRegistry:232]  [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-192.168.1.120.cache, data: {com.pdd.shopMgr.api.service.StoreShopService=empty://192.168.1.118/com.pdd.shopMgr.api.service.StoreShopService?application=oxygen-shopMgr-webServer&category=configurators&dubbo=2.5.3&interface=com.pdd.shopMgr.api.service.StoreShopService&methods=getByIdentityCard,getByPhoneNumber,getForLogin,saveForRegister&pid=7064&revision=1.0.0&side=consumer&timestamp=1519606796253 empty://192.168.1.118/com.pdd.shopMgr.api.service.StoreShopService?application=oxygen-shopMgr-webServer&category=routers&dubbo=2.5.3&interface=com.pdd.shopMgr.api.service.StoreShopService&methods=getByIdentityCard,getByPhoneNumber,getForLogin,saveForRegister&pid=7064&revision=1.0.0&side=consumer&timestamp=1519606796253 dubbo://192.168.1.121:20880/com.pdd.shopMgr.api.service.StoreShopService?anyhost=true&application=oxygen-shopMgr-service&dubbo=2.5.3&interface=com.pdd.shopMgr.api.service.StoreShopService&methods=getByIdentityCard,getForLogin,getByPhoneNumber,saveForRegister&pid=1144&revision=1.0.0&side=provider&timestamp=1519552319808, com.pdd.shopMgr.api.service.StoreGoodsService=empty://192.168.1.118/com.pdd.shopMgr.api.service.StoreGoodsService?application=oxygen-shopMgr-webServer&category=configurators&dubbo=2.5.3&interface=com.pdd.shopMgr.api.service.StoreGoodsService&methods=getGoodsByParams&pid=7064&revision=1.0.0&side=consumer&timestamp=1519606795594 empty://192.168.1.118/com.pdd.shopMgr.api.service.StoreGoodsService?application=oxygen-shopMgr-webServer&category=routers&dubbo=2.5.3&interface=com.pdd.shopMgr.api.service.StoreGoodsService&methods=getGoodsByParams&pid=7064&revision=1.0.0&side=consumer&timestamp=1519606795594 dubbo://192.168.1.121:20880/com.pdd.shopMgr.api.service.StoreGoodsService?anyhost=true&application=oxygen-shopMgr-service&dubbo=2.5.3&interface=com.pdd.shopMgr.api.service.StoreGoodsService&methods=getGoodsByParams&pid=1144&revision=1.0.0&side=provider&timestamp=1519552317927}, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,793][ZkEventThread:64] Starting ZkClient event thread.
+[INFO ][20180226 16:29:50,802][Environment:100] Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+[INFO ][20180226 16:29:50,803][Environment:100] Client environment:host.name=pdd-java01
+[INFO ][20180226 16:29:50,803][Environment:100] Client environment:java.version=1.8.0_144
+[INFO ][20180226 16:29:50,804][Environment:100] Client environment:java.vendor=Oracle Corporation
+[INFO ][20180226 16:29:50,804][Environment:100] Client environment:java.home=D:\Program Files\Java\jre1.8.0_144
+[INFO ][20180226 16:29:50,804][Environment:100] Client environment:java.class.path=D:\Program Files\Java\jre1.8.0_144\lib\resources.jar;D:\Program Files\Java\jre1.8.0_144\lib\rt.jar;D:\Program Files\Java\jre1.8.0_144\lib\jsse.jar;D:\Program Files\Java\jre1.8.0_144\lib\jce.jar;D:\Program Files\Java\jre1.8.0_144\lib\charsets.jar;D:\Program Files\Java\jre1.8.0_144\lib\jfr.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\access-bridge-64.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\cldrdata.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\dnsns.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\jaccess.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\jfxrt.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\localedata.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\nashorn.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\sunec.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\sunjce_provider.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\sunmscapi.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\sunpkcs11.jar;D:\Program Files\Java\jre1.8.0_144\lib\ext\zipfs.jar;G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\test-classes;G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service\target\classes;G:\git\oxygen\oxygen-common-core\target\classes;H:\MavenRepository\com\fasterxml\jackson\core\jackson-core\2.8.5\jackson-core-2.8.5.jar;H:\MavenRepository\com\fasterxml\jackson\core\jackson-databind\2.8.5\jackson-databind-2.8.5.jar;H:\MavenRepository\com\fasterxml\jackson\core\jackson-annotations\2.8.5\jackson-annotations-2.8.5.jar;H:\MavenRepository\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;H:\MavenRepository\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;G:\git\oxygen\oxygen-common\target\classes;H:\MavenRepository\com\ibeetl\beetl\2.2.7\beetl-2.2.7.jar;H:\MavenRepository\org\antlr\antlr4-runtime\4.2\antlr4-runtime-4.2.jar;H:\MavenRepository\org\abego\treelayout\org.abego.treelayout.core\1.0.1\org.abego.treelayout.core-1.0.1.jar;H:\MavenRepository\org\antlr\antlr4-annotations\4.2\antlr4-annotations-4.2.jar;H:\MavenRepository\com\ibeetl\btjson\0.94\btjson-0.94.jar;H:\MavenRepository\com\fasterxml\jackson\datatype\jackson-datatype-hibernate4\2.5.3\jackson-datatype-hibernate4-2.5.3.jar;H:\MavenRepository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar;H:\MavenRepository\com\xiaoleilu\hutool-all\3.1.1\hutool-all-3.1.1.jar;H:\MavenRepository\javax\persistence\persistence-api\1.0.2\persistence-api-1.0.2.jar;H:\MavenRepository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;H:\MavenRepository\org\hibernate\hibernate-validator\5.2.2.Final\hibernate-validator-5.2.2.Final.jar;H:\MavenRepository\org\jboss\logging\jboss-logging\3.2.1.Final\jboss-logging-3.2.1.Final.jar;H:\MavenRepository\com\fasterxml\classmate\1.1.0\classmate-1.1.0.jar;H:\MavenRepository\com\baidu\unbiz\fluent-validator\1.0.6\fluent-validator-1.0.6.jar;H:\MavenRepository\org\springframework\spring-context-support\4.3.5.RELEASE\spring-context-support-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-beans\4.3.5.RELEASE\spring-beans-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-context\4.3.5.RELEASE\spring-context-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-core\4.3.5.RELEASE\spring-core-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-webmvc\4.3.5.RELEASE\spring-webmvc-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-aop\4.3.5.RELEASE\spring-aop-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-expression\4.3.5.RELEASE\spring-expression-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-web\4.3.5.RELEASE\spring-web-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-jdbc\4.3.5.RELEASE\spring-jdbc-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-tx\4.3.5.RELEASE\spring-tx-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-test\4.3.5.RELEASE\spring-test-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-jms\4.3.5.RELEASE\spring-jms-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-messaging\4.3.5.RELEASE\spring-messaging-4.3.5.RELEASE.jar;H:\MavenRepository\org\springframework\security\spring-security-web\4.1.3.RELEASE\spring-security-web-4.1.3.RELEASE.jar;H:\MavenRepository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;H:\MavenRepository\org\springframework\security\spring-security-core\4.1.3.RELEASE\spring-security-core-4.1.3.RELEASE.jar;H:\MavenRepository\org\springframework\security\spring-security-config\4.1.3.RELEASE\spring-security-config-4.1.3.RELEASE.jar;H:\MavenRepository\org\springframework\session\spring-session-data-redis\1.3.0.RELEASE\spring-session-data-redis-1.3.0.RELEASE.jar;H:\MavenRepository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;H:\MavenRepository\org\springframework\session\spring-session\1.3.0.RELEASE\spring-session-1.3.0.RELEASE.jar;H:\MavenRepository\org\apache\shiro\shiro-core\1.3.2\shiro-core-1.3.2.jar;H:\MavenRepository\org\apache\shiro\shiro-web\1.3.2\shiro-web-1.3.2.jar;H:\MavenRepository\org\apache\shiro\shiro-quartz\1.3.2\shiro-quartz-1.3.2.jar;H:\MavenRepository\org\opensymphony\quartz\quartz\1.6.1\quartz-1.6.1.jar;H:\MavenRepository\org\apache\shiro\shiro-spring\1.3.2\shiro-spring-1.3.2.jar;H:\MavenRepository\net\sf\ehcache\ehcache\2.10.0\ehcache-2.10.0.jar;H:\MavenRepository\org\mybatis\mybatis-ehcache\1.0.0\mybatis-ehcache-1.0.0.jar;H:\MavenRepository\net\sf\ehcache\ehcache-core\2.0.0\ehcache-core-2.0.0.jar;H:\MavenRepository\redis\clients\jedis\2.4.2\jedis-2.4.2.jar;H:\MavenRepository\org\springframework\data\spring-data-redis\1.7.5.RELEASE\spring-data-redis-1.7.5.RELEASE.jar;H:\MavenRepository\org\springframework\data\spring-data-keyvalue\1.1.5.RELEASE\spring-data-keyvalue-1.1.5.RELEASE.jar;H:\MavenRepository\org\springframework\data\spring-data-commons\1.12.5.RELEASE\spring-data-commons-1.12.5.RELEASE.jar;H:\MavenRepository\org\springframework\spring-oxm\4.3.5.RELEASE\spring-oxm-4.3.5.RELEASE.jar;H:\MavenRepository\org\slf4j\jcl-over-slf4j\1.7.21\jcl-over-slf4j-1.7.21.jar;H:\MavenRepository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;H:\MavenRepository\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;H:\MavenRepository\commons-fileupload\commons-fileupload\1.3.1\commons-fileupload-1.3.1.jar;H:\MavenRepository\commons-io\commons-io\2.0.1\commons-io-2.0.1.jar;H:\MavenRepository\org\apache\shiro\shiro-ehcache\1.4.0\shiro-ehcache-1.4.0.jar;H:\MavenRepository\org\apache\shiro\shiro-cache\1.4.0\shiro-cache-1.4.0.jar;H:\MavenRepository\org\apache\shiro\shiro-lang\1.4.0\shiro-lang-1.4.0.jar;H:\MavenRepository\io\springfox\springfox-swagger2\2.4.0\springfox-swagger2-2.4.0.jar;H:\MavenRepository\io\swagger\swagger-annotations\1.5.6\swagger-annotations-1.5.6.jar;H:\MavenRepository\io\swagger\swagger-models\1.5.6\swagger-models-1.5.6.jar;H:\MavenRepository\io\springfox\springfox-spi\2.4.0\springfox-spi-2.4.0.jar;H:\MavenRepository\io\springfox\springfox-core\2.4.0\springfox-core-2.4.0.jar;H:\MavenRepository\io\springfox\springfox-schema\2.4.0\springfox-schema-2.4.0.jar;H:\MavenRepository\io\springfox\springfox-swagger-common\2.4.0\springfox-swagger-common-2.4.0.jar;H:\MavenRepository\io\springfox\springfox-spring-web\2.4.0\springfox-spring-web-2.4.0.jar;H:\MavenRepository\com\google\guava\guava\18.0\guava-18.0.jar;H:\MavenRepository\org\springframework\plugin\spring-plugin-core\1.2.0.RELEASE\spring-plugin-core-1.2.0.RELEASE.jar;H:\MavenRepository\org\springframework\plugin\spring-plugin-metadata\1.2.0.RELEASE\spring-plugin-metadata-1.2.0.RELEASE.jar;H:\MavenRepository\io\springfox\springfox-swagger-ui\2.4.0\springfox-swagger-ui-2.4.0.jar;H:\MavenRepository\org\apache\activemq\activemq-core\5.7.0\activemq-core-5.7.0.jar;H:\MavenRepository\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar;H:\MavenRepository\org\apache\activemq\kahadb\5.7.0\kahadb-5.7.0.jar;H:\MavenRepository\org\apache\activemq\protobuf\activemq-protobuf\1.1\activemq-protobuf-1.1.jar;H:\MavenRepository\org\fusesource\mqtt-client\mqtt-client\1.3\mqtt-client-1.3.jar;H:\MavenRepository\org\fusesource\hawtdispatch\hawtdispatch-transport\1.11\hawtdispatch-transport-1.11.jar;H:\MavenRepository\org\fusesource\hawtdispatch\hawtdispatch\1.11\hawtdispatch-1.11.jar;H:\MavenRepository\org\fusesource\hawtbuf\hawtbuf\1.9\hawtbuf-1.9.jar;H:\MavenRepository\org\apache\geronimo\specs\geronimo-j2ee-management_1.1_spec\1.0.1\geronimo-j2ee-management_1.1_spec-1.0.1.jar;H:\MavenRepository\commons-net\commons-net\3.2\commons-net-3.2.jar;H:\MavenRepository\org\jasypt\jasypt\1.9.0\jasypt-1.9.0.jar;H:\MavenRepository\net\sf\json-lib\json-lib\2.3\json-lib-2.3-jdk15.jar;H:\MavenRepository\commons-collections\commons-collections\3.2\commons-collections-3.2.jar;H:\MavenRepository\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;H:\MavenRepository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;H:\MavenRepository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;H:\MavenRepository\com\alibaba\fastjson\1.1.41\fastjson-1.1.41.jar;H:\MavenRepository\javax\mail\mail\1.4.7\mail-1.4.7.jar;H:\MavenRepository\javax\activation\activation\1.1\activation-1.1.jar;H:\MavenRepository\org\apache\httpcomponents\httpclient\4.3.3\httpclient-4.3.3.jar;H:\MavenRepository\org\apache\httpcomponents\httpcore\4.3.2\httpcore-4.3.2.jar;H:\MavenRepository\commons-codec\commons-codec\1.8\commons-codec-1.8.jar;H:\MavenRepository\org\aspectj\aspectjweaver\1.7.3\aspectjweaver-1.7.3.jar;H:\MavenRepository\org\apache\velocity\velocity-engine-core\2.0\velocity-engine-core-2.0.jar;H:\MavenRepository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar;H:\MavenRepository\javax\servlet\jstl\1.2\jstl-1.2.jar;H:\MavenRepository\commons-beanutils\commons-beanutils\1.8.0\commons-beanutils-1.8.0.jar;G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-api\target\classes;G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-common\target\classes;H:\MavenRepository\com\oxygen\oxygen-common\1.0.0\oxygen-common-1.0.0.jar;H:\MavenRepository\org\mybatis\generator\mybatis-generator-core\1.3.2\mybatis-generator-core-1.3.2.jar;H:\MavenRepository\org\mybatis\mybatis\3.4.1\mybatis-3.4.1.jar;H:\MavenRepository\org\mybatis\mybatis-spring\1.3.1\mybatis-spring-1.3.1.jar;H:\MavenRepository\com\github\pagehelper\pagehelper\4.1.4\pagehelper-4.1.4.jar;H:\MavenRepository\com\github\jsqlparser\jsqlparser\0.9.5\jsqlparser-0.9.5.jar;H:\MavenRepository\mysql\mysql-connector-java\5.1.32\mysql-connector-java-5.1.32.jar;H:\MavenRepository\com\alibaba\druid\1.0.14\druid-1.0.14.jar;H:\MavenRepository\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;H:\MavenRepository\com\alibaba\dubbo\2.5.3\dubbo-2.5.3.jar;H:\MavenRepository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;H:\MavenRepository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;H:\MavenRepository\log4j\log4j\1.2.17\log4j-1.2.17.jar;H:\MavenRepository\jline\jline\0.9.94\jline-0.9.94.jar;H:\MavenRepository\com\101tec\zkclient\0.3\zkclient-0.3.jar;H:\MavenRepository\junit\junit\4.12\junit-4.12.jar;H:\MavenRepository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+[INFO ][20180226 16:29:50,805][Environment:100] Client environment:java.library.path=D:\Program Files\Java\jre1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/Program Files/Java/jre1.8.0_144/bin/server;D:/Program Files/Java/jre1.8.0_144/bin;D:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;D:\Program Files\Java\jdk1.8.0_144\bin;D:\Program Files\Java\jdk1.8.0_144\jre\bin;G:\apache-maven-3.5.2\bin;D:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;C:\Users\Administrator\Desktop;;.
+[INFO ][20180226 16:29:50,806][Environment:100] Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+[INFO ][20180226 16:29:50,806][Environment:100] Client environment:java.compiler=<NA>
+[INFO ][20180226 16:29:50,806][Environment:100] Client environment:os.name=Windows 10
+[INFO ][20180226 16:29:50,806][Environment:100] Client environment:os.arch=amd64
+[INFO ][20180226 16:29:50,807][Environment:100] Client environment:os.version=10.0
+[INFO ][20180226 16:29:50,808][Environment:100] Client environment:user.name=Administrator
+[INFO ][20180226 16:29:50,808][Environment:100] Client environment:user.home=C:\Users\Administrator
+[INFO ][20180226 16:29:50,808][Environment:100] Client environment:user.dir=G:\git\oxygen\oxygen-userMgr\oxygen-userMgr-service
+[INFO ][20180226 16:29:50,809][ZooKeeper:438] Initiating client connection, connectString=192.168.1.120:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@41d426b5
+[INFO ][20180226 16:29:50,833][ClientCnxn$SendThread:966] Opening socket connection to server 192.168.1.120/192.168.1.120:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][20180226 16:29:50,837][ClientCnxn$SendThread:849] Socket connection established to 192.168.1.120/192.168.1.120:2181, initiating session
+[INFO ][20180226 16:29:50,925][ClientCnxn$SendThread:1207] Session establishment complete on server 192.168.1.120/192.168.1.120:2181, sessionid = 0x161cdb9a8470001, negotiated timeout = 30000
+[INFO ][20180226 16:29:50,927][ZkClient:449] zookeeper state changed (SyncConnected)
+[INFO ][20180226 16:29:50,929][AbstractRegistry:302]  [DUBBO] Register: dubbo://192.168.1.118:20880/com.pdd.userMgr.api.service.StoreUserService?anyhost=true&application=oxygen-userMgr-service&dubbo=2.5.3&interface=com.pdd.userMgr.api.service.StoreUserService&methods=addStoreUser&pid=7212&side=provider&timestamp=1519633790358, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,974][AbstractRegistry:325]  [DUBBO] Subscribe: provider://192.168.1.118:20880/com.pdd.userMgr.api.service.StoreUserService?anyhost=true&application=oxygen-userMgr-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pdd.userMgr.api.service.StoreUserService&methods=addStoreUser&pid=7212&side=provider&timestamp=1519633790358, dubbo version: 2.5.3, current host: 127.0.0.1
+[INFO ][20180226 16:29:50,992][AbstractRegistry:422]  [DUBBO] Notify urls for subscribe url provider://192.168.1.118:20880/com.pdd.userMgr.api.service.StoreUserService?anyhost=true&application=oxygen-userMgr-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pdd.userMgr.api.service.StoreUserService&methods=addStoreUser&pid=7212&side=provider&timestamp=1519633790358, urls: [empty://192.168.1.118:20880/com.pdd.userMgr.api.service.StoreUserService?anyhost=true&application=oxygen-userMgr-service&category=configurators&check=false&dubbo=2.5.3&interface=com.pdd.userMgr.api.service.StoreUserService&methods=addStoreUser&pid=7212&side=provider&timestamp=1519633790358], dubbo version: 2.5.3, current host: 127.0.0.1

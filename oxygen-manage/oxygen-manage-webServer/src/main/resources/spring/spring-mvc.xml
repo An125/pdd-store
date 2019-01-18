@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+      http://www.springframework.org/schema/beans/spring-beans-4.3.xsd  
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.3.xsd  
+      http://www.springframework.org/schema/mvc  
+      http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+	<!-- 需配置处理器映射器  、处理器适配器、 视图解析器 、Hndler（ 即controller） -->
+	
+	
+	<!-- 配置要扫描的包 -->
+	<context:component-scan base-package="com.pdd.manage.webServer.controller">
+		<!-- 这句很重要，扫描controller的时候不能将service包扫进去，不然service将失去事务装配，Spring将管理不到事务 -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+	
+	<!-- 静态资源 解析（不拦截此目录下的东西的访问）:由Spring MVC框架自己处理静态资源,允许静态资源放在任何地方，如WEB-INF目录下、类路径下等 -->
+<!-- 	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/img/" mapping="/img/**" /> -->
+	 
+	<!-- 通过annotation-driven可以替代下边的处理器映射器和处理器适配器 -->
+	<mvc:annotation-driven />
+	
+	<!--<mvc:default-servlet-handler />将在 SpringMVC 上下文中定义一个DefaultServletHttpRequestHandler，
+	它会对进入 DispatcherServlet 的请求进行筛查，如果发现是没有经过映射的请求，
+	就将该请求交由 WEB 应用服务器默认的 Servlet 处理，如果不是静态资源的请求，才由DispatcherServlet 继续处理 -->
+	<mvc:default-servlet-handler />  
+	
+	<!-- 注解处理器映射器：
+	使用RequestMappingHandlerMapping 需要在Handler（即Controller）中使用@Controller/@RestController标识此类是一个控制器，
+	使用@RequestMapping指定Handler（即Controller）方法所对应的url-->
+	<!-- <bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+	</bean> -->
+
+
+	<!-- 配置视图解析器 要求将jstl的包加到classpath -->
+	<!-- ViewResolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 前缀 -->
+		 <property name="prefix" value="/WEB-INF/jsp" /> 
+		<!-- 后缀     
+		 真正视图地址就是：   前缀+逻辑视图名+后缀 -->
+		<property name="suffix" value=".jsp" /> 
+	</bean>
+
+</beans>

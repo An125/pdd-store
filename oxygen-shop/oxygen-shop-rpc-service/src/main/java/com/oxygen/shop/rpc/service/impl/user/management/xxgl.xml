@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oxygen.shop.rpc.service.impl.user.management.xxgl.xml">
+	<!-- 查询用户记录数 -->
+	<select id="select_userjl" parameterType="User" resultType="java.lang.Integer">
+		SELECT COUNT(id) FROM user WHERE Privilege='common'
+	</select>
+	<!-- 查询用户(分页) -->
+	<select id="select_user" parameterType="java.util.Map"
+		resultType="User">
+		select * from user where Privilege='common' ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+	</select>
+	<!-- 查询代理商记录数 -->
+	<select id="select_adminjl" parameterType="User" resultType="java.lang.Integer">
+		SELECT COUNT(id) FROM user where Privilege='merchants'
+	</select>
+	<!-- 查询代理商(分页) -->
+	<select id="select_admin" parameterType="java.util.Map"
+		resultType="User">
+		select * from user where Privilege='merchants' ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+	</select>
+	<!-- 查询用户消费记录数 -->
+	<select id="select_userxfjl" parameterType="String" resultType="java.lang.Integer">
+		SELECT COUNT(id) FROM Order_form where username=#{username}
+		
+	</select>
+	<!-- 查询用户消费(分页) -->
+	<select id="select_userxf" parameterType="java.util.Map"
+		resultType="Order_form">
+		select * from Order_form where username=#{username} ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+	</select>
+	<!-- app查询商户出售情况(分页) -->
+	<select id="select_admincs" parameterType="java.util.Map" resultType="Order_form">
+		select * from Order_form where merchants=#{username} ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+	</select>
+	<!-- app查询商户出售记录数 -->
+	<select id="select_admincsjl" parameterType="String" resultType="java.lang.Integer">
+		SELECT COUNT(id) FROM Order_form where merchants=#{username}
+		
+	</select>
+</mapper>

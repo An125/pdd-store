@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oxygen.shop.rpc.service.impl.merchants.xml.create">
+	<!-- 创建销售表 -->
+	<update id="createmarketTable" parameterType="java.util.Map">
+		CREATE TABLE ${_parameter}(
+		id INT(20) NOT NULL AUTO_INCREMENT COMMENT
+		'设置主键自增',
+		sogo_quotation_id
+		INT(20) NOT NULL COMMENT '外键对应商户报价表兼销售id',
+		product VARCHAR(20) NOT NULL
+		COMMENT '产品',
+		stock VARCHAR(10) DEFAULT
+		NULL COMMENT '进货价',<!-- 会按销售个数进行变动 -->
+		cost VARCHAR(10) DEFAULT NULL COMMENT '卖出价格 ',
+		income VARCHAR(10)
+		DEFAULT NULL COMMENT '所得 ',
+		PRIMARY KEY (id),
+		FOREIGN
+		KEY(sogo_quotation_id) REFERENCES ${tableName}(id)
+		)
+		<!-- CREATE TABLE per1 ( id int(4) COMMENT '设置主键自增', message varchar(20), 
+			PRIMARY KEY (id) ) -->
+	</update>
+</mapper>

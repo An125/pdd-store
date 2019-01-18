@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/oxygen.iml" filepath="$PROJECT_DIR$/oxygen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-admin/oxygen-admin.iml" filepath="$PROJECT_DIR$/oxygen-admin/oxygen-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion.iml" filepath="$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-api/oxygen-appVersion-api.iml" filepath="$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-api/oxygen-appVersion-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-common/oxygen-appVersion-common.iml" filepath="$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-common/oxygen-appVersion-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-service/oxygen-appVersion-service.iml" filepath="$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-service/oxygen-appVersion-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-webServer/oxygen-appVersion-webServer.iml" filepath="$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-webServer/oxygen-appVersion-webServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-common/oxygen-common.iml" filepath="$PROJECT_DIR$/oxygen-common/oxygen-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-common-core/oxygen-common-core.iml" filepath="$PROJECT_DIR$/oxygen-common-core/oxygen-common-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-community/oxygen-community.iml" filepath="$PROJECT_DIR$/oxygen-community/oxygen-community.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-community/oxygen-community-api/oxygen-community-api.iml" filepath="$PROJECT_DIR$/oxygen-community/oxygen-community-api/oxygen-community-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-community/oxygen-community-common/oxygen-community-common.iml" filepath="$PROJECT_DIR$/oxygen-community/oxygen-community-common/oxygen-community-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-community/oxygen-community-service/oxygen-community-service.iml" filepath="$PROJECT_DIR$/oxygen-community/oxygen-community-service/oxygen-community-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-community/oxygen-community-webServer/oxygen-community-webServer.iml" filepath="$PROJECT_DIR$/oxygen-community/oxygen-community-webServer/oxygen-community-webServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-manage/oxygen-manage.iml" filepath="$PROJECT_DIR$/oxygen-manage/oxygen-manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-manage/oxygen-manage-api/oxygen-manage-api.iml" filepath="$PROJECT_DIR$/oxygen-manage/oxygen-manage-api/oxygen-manage-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-manage/oxygen-manage-common/oxygen-manage-common.iml" filepath="$PROJECT_DIR$/oxygen-manage/oxygen-manage-common/oxygen-manage-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-manage/oxygen-manage-service/oxygen-manage-service.iml" filepath="$PROJECT_DIR$/oxygen-manage/oxygen-manage-service/oxygen-manage-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-manage/oxygen-manage-shiro/oxygen-manage-shiro.iml" filepath="$PROJECT_DIR$/oxygen-manage/oxygen-manage-shiro/oxygen-manage-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-manage/oxygen-manage-webServer/oxygen-manage-webServer.iml" filepath="$PROJECT_DIR$/oxygen-manage/oxygen-manage-webServer/oxygen-manage-webServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr.iml" filepath="$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-api/oxygen-orderMgr-api.iml" filepath="$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-api/oxygen-orderMgr-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-common/oxygen-orderMgr-common.iml" filepath="$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-common/oxygen-orderMgr-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-service/oxygen-orderMgr-service.iml" filepath="$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-service/oxygen-orderMgr-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-webServer/oxygen-orderMgr-webServer.iml" filepath="$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-webServer/oxygen-orderMgr-webServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay.iml" filepath="$PROJECT_DIR$/oxygen-pay/oxygen-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay-common/oxygen-pay-common.iml" filepath="$PROJECT_DIR$/oxygen-pay/oxygen-pay-common/oxygen-pay-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay-dao/oxygen-pay-dao.iml" filepath="$PROJECT_DIR$/oxygen-pay/oxygen-pay-dao/oxygen-pay-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay-rpc-api/oxygen-pay-rpc-api.iml" filepath="$PROJECT_DIR$/oxygen-pay/oxygen-pay-rpc-api/oxygen-pay-rpc-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay-rpc-service/oxygen-pay-rpc-service.iml" filepath="$PROJECT_DIR$/oxygen-pay/oxygen-pay-rpc-service/oxygen-pay-rpc-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay-web/oxygen-pay-web.iml" filepath="$PROJECT_DIR$/oxygen-pay/oxygen-pay-web/oxygen-pay-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay-wx-sdk/oxygen-pay-wx-sdk.iml" filepath="$PROJECT_DIR$/oxygen-pay/oxygen-pay-wx-sdk/oxygen-pay-wx-sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr.iml" filepath="$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-api/oxygen-payMgr-api.iml" filepath="$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-api/oxygen-payMgr-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-common/oxygen-payMgr-common.iml" filepath="$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-common/oxygen-payMgr-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-service/oxygen-payMgr-service.iml" filepath="$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-service/oxygen-payMgr-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-webServer/oxygen-payMgr-webServer.iml" filepath="$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-webServer/oxygen-payMgr-webServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop.iml" filepath="$PROJECT_DIR$/oxygen-shop/oxygen-shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop-common/oxygen-shop-common.iml" filepath="$PROJECT_DIR$/oxygen-shop/oxygen-shop-common/oxygen-shop-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop-dao/oxygen-shop-dao.iml" filepath="$PROJECT_DIR$/oxygen-shop/oxygen-shop-dao/oxygen-shop-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop-filter/oxygen-shop-filter.iml" filepath="$PROJECT_DIR$/oxygen-shop/oxygen-shop-filter/oxygen-shop-filter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop-rpc-api/oxygen-shop-rpc-api.iml" filepath="$PROJECT_DIR$/oxygen-shop/oxygen-shop-rpc-api/oxygen-shop-rpc-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop-rpc-service/oxygen-shop-rpc-service.iml" filepath="$PROJECT_DIR$/oxygen-shop/oxygen-shop-rpc-service/oxygen-shop-rpc-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop-server/oxygen-shop-server.iml" filepath="$PROJECT_DIR$/oxygen-shop/oxygen-shop-server/oxygen-shop-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr.iml" filepath="$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-api/oxygen-shopMgr-api.iml" filepath="$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-api/oxygen-shopMgr-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-common/oxygen-shopMgr-common.iml" filepath="$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-common/oxygen-shopMgr-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-service/oxygen-shopMgr-service.iml" filepath="$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-service/oxygen-shopMgr-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-webServer/oxygen-shopMgr-webServer.iml" filepath="$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-webServer/oxygen-shopMgr-webServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart.iml" filepath="$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-api/oxygen-shoppingCart-api.iml" filepath="$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-api/oxygen-shoppingCart-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-common/oxygen-shoppingCart-common.iml" filepath="$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-common/oxygen-shoppingCart-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-service/oxygen-shoppingCart-service.iml" filepath="$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-service/oxygen-shoppingCart-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-webServer/oxygen-shoppingCart-webServer.iml" filepath="$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-webServer/oxygen-shoppingCart-webServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms.iml" filepath="$PROJECT_DIR$/oxygen-upms/oxygen-upms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms-common/oxygen-upms-common.iml" filepath="$PROJECT_DIR$/oxygen-upms/oxygen-upms-common/oxygen-upms-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms-dao/oxygen-upms-dao.iml" filepath="$PROJECT_DIR$/oxygen-upms/oxygen-upms-dao/oxygen-upms-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms-rpc-api/oxygen-upms-rpc-api.iml" filepath="$PROJECT_DIR$/oxygen-upms/oxygen-upms-rpc-api/oxygen-upms-rpc-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms-rpc-service/oxygen-upms-rpc-service.iml" filepath="$PROJECT_DIR$/oxygen-upms/oxygen-upms-rpc-service/oxygen-upms-rpc-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms-server/oxygen-upms-server.iml" filepath="$PROJECT_DIR$/oxygen-upms/oxygen-upms-server/oxygen-upms-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms-shiro/oxygen-upms-shiro.iml" filepath="$PROJECT_DIR$/oxygen-upms/oxygen-upms-shiro/oxygen-upms-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr.iml" filepath="$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-api/oxygen-userMgr-api.iml" filepath="$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-api/oxygen-userMgr-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-common/oxygen-userMgr-common.iml" filepath="$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-common/oxygen-userMgr-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-service/oxygen-userMgr-service.iml" filepath="$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-service/oxygen-userMgr-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-webServer/oxygen-userMgr-webServer.iml" filepath="$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-webServer/oxygen-userMgr-webServer.iml" />
+    </modules>
+  </component>
+</project>

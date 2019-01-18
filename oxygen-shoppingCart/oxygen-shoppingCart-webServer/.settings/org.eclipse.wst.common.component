@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="oxygen-shoppingCart-webServer">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="oxygen-shoppingCart-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-shoppingCart-common/oxygen-shoppingCart-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oxygen-shoppingCart-api-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-shoppingCart-api/oxygen-shoppingCart-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oxygen-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-common/oxygen-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="oxygen-shoppingCart-webServer"/>
+        <property name="java-output-path" value="/oxygen-shoppingCart-webServer/target/classes"/>
+    </wb-module>
+</project-modules>

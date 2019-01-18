@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-appVersion/oxygen-appVersion-webServer" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-community/oxygen-community-webServer" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-manage/oxygen-manage-webServer" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-webServer" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-pay/oxygen-pay-web" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-service" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-payMgr/oxygen-payMgr-webServer" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-shop/oxygen-shop-server" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-shopMgr/oxygen-shopMgr-webServer" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-shoppingCart/oxygen-shoppingCart-webServer" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-upms/oxygen-upms-server" />
+    <file type="web" url="file://$PROJECT_DIR$/oxygen-userMgr/oxygen-userMgr-webServer" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

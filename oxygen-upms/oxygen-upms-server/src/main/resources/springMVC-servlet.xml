@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 根目录'/'对应页面 -->
+    <mvc:view-controller path="/" view-name="/index.html"/>
+    <mvc:resources mapping="/WEB-INF/btl/error/**" location="/WEB-INF/btl/error/" cache-period="10"/>
+
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+        <!-- 获取登录信息 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/manage/**"/>
+            <bean class="com.oxygen.upms.server.interceptor.UpmsInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!-- beetl视图 -->
+    <bean name="beetlGroupUtilConfiguration" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init">
+        <property name="functionPackages">
+            <map>
+                <entry key="so">
+                    <bean class="com.oxygen.common.beetl.ShiroExt"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+    <!-- Beetl视图解析器1 -->
+    <bean name="beetlViewResolver" class="org.beetl.ext.spring.BeetlSpringViewResolver">
+        <property name="prefix" value="/WEB-INF/btl"/>
+        <property name="suffix" value=""/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+    </bean>
+
+
+</beans>

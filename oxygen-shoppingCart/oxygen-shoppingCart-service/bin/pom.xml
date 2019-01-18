@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.oxygen</groupId>
+    <artifactId>oxygen-shoppingCart</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>oxygen-shoppingCart-service</artifactId>
+  
+  	<build>
+		<finalName>oxygen-shoppingCart-service</finalName>
+		<resources>
+			<resource>
+				<targetPath>${project.build.directory}/classes</targetPath>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.oxygen</groupId>
+			<artifactId>oxygen-shoppingCart-api</artifactId>
+			<version>${oxygen-shoppingCart-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oxygen</groupId>
+			<artifactId>oxygen-shoppingCart-common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

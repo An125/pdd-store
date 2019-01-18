@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oxygen.shop.rpc.service.impl.user.company.product.pc.xml.Quotation">
+	<!-- 保存产品参数和图片路径 -->
+	<insert id="add_quotation" parameterType="Quotation">
+		insert into quotation
+		(product,offer,top_Price,floor_Price,path,stock,date)values(#{product},
+		#{offer}, #{top_Price}, #{floor_Price}, #{path},#{stock}, #{date})
+	</insert>
+	<!-- 删除产品参数和图片路径  -->
+	<delete id="delete_quotation" parameterType="Quotation">
+		delete from quotation where id=#{id} and product=#{product}
+	</delete>
+	<!-- 修改产品参数和图片路径 --> 
+	<update id="update_quotation" parameterType="Quotation">
+		update quotation set product=#{product},offer=#{offer},top_Price=#{top_Price},floor_Price=#{floor_Price},path=#{path} where id=#{id} and product =#{product}
+	</update>
+	<!-- 查询产品参数和图片路径 -->
+	<select id="select_quotation" parameterType="Quotation"
+		 resultType="Quotation"> 
+		select * from quotation
+	</select>
+</mapper>

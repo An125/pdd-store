@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oxygen.shop.rpc.service.impl.user.company.product.app.xml.Quotation">
+	<!-- 保存产品参数和图片路径 -->
+	<insert id="add_quotation" parameterType="Quotation">
+		insert into quotation
+		(product,offer,top_Price,floor_Price,path)values(#{product},
+		#{offer},
+		#{top_Price}, #{floor_Price}, #{path})
+	</insert>
+	<!-- 商户选择产品的产品页面(过滤掉已经选择了的产品,已经选择的不显示) -->
+	<select id="select" parameterType="java.util.Map" resultType="Quotation">
+		select * from quotation where id not in (select quotation_id from
+		${tableName})ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+		<!-- select * from ${tableName} where #{quotation_id} not in (select id 
+			from quotation) -->
+	</select>
+	<!-- 查询过滤后记录数 -->
+	<select id="selectFilter" parameterType="Quotation" resultType="java.lang.Integer">
+		SELECT COUNT(id) FROM quotation WHERE id NOT IN (SELECT quotation_id FROM ${_parameter})
+	</select>
+	<!-- 修改产品价格 -->
+	<update id="update_quotation" parameterType="java.util.Map">
+		update ${tableName} set offer=#{offer} where id=#{cp_id}
+	</update>
+	<!-- 删除商户产品参数和图片路径 -->
+	<delete id="ProductDelete" parameterType="java.util.Map">
+		delete from
+		${tableName} where id=#{id}
+	</delete>
+	<!-- 删除产品参数和图片路径 -->
+	<delete id="delete_quotation" parameterType="Quotation">
+		delete from
+		quotation where id=#{id} and product=#{product}
+	</delete>
+	<!-- 查询产品参数和图片路径(分页) -->
+	<select id="select_quotation" parameterType="java.util.Map"
+		resultType="Quotation">
+		select * from quotation ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+	</select>
+	<!-- 查询产品 -->
+	<select id="s_id" parameterType="java.util.Map"
+		resultType="Quotation">
+		select id from quotation
+	</select>
+	<!-- 查询记录数 -->
+	<select id="select_count" parameterType="Quotation" resultType="java.lang.Integer">
+		select count(id) from quotation
+	</select>
+	<!-- 查询所在店面id -->
+	<select id="select_id" parameterType="user" resultType="java.lang.Integer">
+		select
+		count(id) from user where username=#{location}
+	</select>
+	<!-- 查询商户记录数 -->
+	<select id="select_sogocount" parameterType="Quotation"
+		resultType="java.lang.Integer">
+		select count(id) from ${_parameter}
+	</select>
+	<!-- 查询商户产品参数和图片路径(分页) -->
+	<select id="select_sogequotation" parameterType="java.util.Map"
+		resultType="Quotation">
+		select * from ${TableName} ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+	</select>
+	<!-- 模糊查询总公司记录数 -->
+	<select id="fuzzy_query_count" parameterType="String" resultType="java.lang.Integer">
+		select count(id) from quotation WHERE product LIKE #{product}
+	</select>
+	<!-- 模糊查询总公司产品参数和图片路径(分页) -->
+	<select id="fuzzy_query_quotation" parameterType="java.util.Map"
+		resultType="Quotation">
+		select * from quotation WHERE product LIKE #{product} ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd} 
+	</select>
+	<!-- 模糊查询商户记录数 -->
+	<select id="fuzzy_query_sogocount" parameterType="java.util.Map"
+		resultType="java.lang.Integer">
+		select count(id) from ${_parameter} WHERE product LIKE #{product}
+	</select>
+	<!-- 查询商户产品参数和图片路径(分页) -->
+	<select id="fuzzy_query_sogequotation" parameterType="java.util.Map"
+		resultType="Quotation">
+		select * from ${TableName} WHERE product LIKE #{product} ORDER BY id desc LIMIT #{PageBegin}, #{PageEnd}
+	</select>
+</mapper>

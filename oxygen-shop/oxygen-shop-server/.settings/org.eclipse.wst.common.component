@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="oxygen-shop-server">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="oxygen-shop-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-shop-common/oxygen-shop-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oxygen-common-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-common/oxygen-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oxygen-shop-rpc-api-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-shop-rpc-api/oxygen-shop-rpc-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oxygen-admin-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-admin/oxygen-admin">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oxygen-shop-rpc-service-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-shop-rpc-service/oxygen-shop-rpc-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="oxygen-shop-dao-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/oxygen-shop-dao/oxygen-shop-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="oxygen-shop-server"/>
+        <property name="java-output-path" value="/oxygen-shop-server/target/classes"/>
+    </wb-module>
+</project-modules>

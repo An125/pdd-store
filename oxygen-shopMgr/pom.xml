@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.oxygen</groupId>
+		<artifactId>oxygen</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>oxygen-shopMgr</artifactId>
+	<packaging>pom</packaging>
+	<name>shopMgr</name>
+	<description>Shop Managerment</description>
+	<modules>
+		<module>oxygen-shopMgr-common</module>
+		<module>oxygen-shopMgr-api</module>
+		<module>oxygen-shopMgr-service</module>
+		<module>oxygen-shopMgr-webServer</module>
+	</modules>
+</project>

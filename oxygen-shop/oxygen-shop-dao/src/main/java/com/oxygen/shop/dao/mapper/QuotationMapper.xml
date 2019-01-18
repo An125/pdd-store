@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oxygen.shop.dao.mapper.QuotationMapper" >
+  <resultMap id="BaseResultMap" type="com.oxygen.shop.common.po.Quotation" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="product" property="product" jdbcType="VARCHAR" />
+    <result column="offer" property="offer" jdbcType="VARCHAR" />
+    <result column="top_Price" property="topPrice" jdbcType="VARCHAR" />
+    <result column="floor_Price" property="floorPrice" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="stock" property="stock" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, product, offer, top_Price, floor_Price, path, date, stock
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.oxygen.shop.common.po.QuotationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from quotation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from quotation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from quotation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.oxygen.shop.common.po.QuotationExample" >
+    delete from quotation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.oxygen.shop.common.po.Quotation" >
+    insert into quotation (id, product, offer, 
+      top_Price, floor_Price, path, 
+      date, stock)
+    values (#{id,jdbcType=INTEGER}, #{product,jdbcType=VARCHAR}, #{offer,jdbcType=VARCHAR}, 
+      #{topPrice,jdbcType=VARCHAR}, #{floorPrice,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{date,jdbcType=VARCHAR}, #{stock,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oxygen.shop.common.po.Quotation" >
+    insert into quotation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="product != null" >
+        product,
+      </if>
+      <if test="offer != null" >
+        offer,
+      </if>
+      <if test="topPrice != null" >
+        top_Price,
+      </if>
+      <if test="floorPrice != null" >
+        floor_Price,
+      </if>
+      <if test="path != null" >
+        path,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="stock != null" >
+        stock,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="product != null" >
+        #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="offer != null" >
+        #{offer,jdbcType=VARCHAR},
+      </if>
+      <if test="topPrice != null" >
+        #{topPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="floorPrice != null" >
+        #{floorPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="stock != null" >
+        #{stock,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.oxygen.shop.common.po.QuotationExample" resultType="java.lang.Integer" >
+    select count(*) from quotation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update quotation
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.product != null" >
+        product = #{record.product,jdbcType=VARCHAR},
+      </if>
+      <if test="record.offer != null" >
+        offer = #{record.offer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.topPrice != null" >
+        top_Price = #{record.topPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.floorPrice != null" >
+        floor_Price = #{record.floorPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.path != null" >
+        path = #{record.path,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stock != null" >
+        stock = #{record.stock,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update quotation
+    set id = #{record.id,jdbcType=INTEGER},
+      product = #{record.product,jdbcType=VARCHAR},
+      offer = #{record.offer,jdbcType=VARCHAR},
+      top_Price = #{record.topPrice,jdbcType=VARCHAR},
+      floor_Price = #{record.floorPrice,jdbcType=VARCHAR},
+      path = #{record.path,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      stock = #{record.stock,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oxygen.shop.common.po.Quotation" >
+    update quotation
+    <set >
+      <if test="product != null" >
+        product = #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="offer != null" >
+        offer = #{offer,jdbcType=VARCHAR},
+      </if>
+      <if test="topPrice != null" >
+        top_Price = #{topPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="floorPrice != null" >
+        floor_Price = #{floorPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="stock != null" >
+        stock = #{stock,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oxygen.shop.common.po.Quotation" >
+    update quotation
+    set product = #{product,jdbcType=VARCHAR},
+      offer = #{offer,jdbcType=VARCHAR},
+      top_Price = #{topPrice,jdbcType=VARCHAR},
+      floor_Price = #{floorPrice,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      stock = #{stock,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

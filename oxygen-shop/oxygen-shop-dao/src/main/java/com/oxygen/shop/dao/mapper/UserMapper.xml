@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oxygen.shop.dao.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.oxygen.shop.common.po.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="Privilege" property="privilege" jdbcType="VARCHAR" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="superior" property="superior" jdbcType="VARCHAR" />
+    <result column="Depth" property="depth" jdbcType="VARCHAR" />
+    <result column="Path" property="path" jdbcType="VARCHAR" />
+    <result column="revenue" property="revenue" jdbcType="VARCHAR" />
+    <result column="consume" property="consume" jdbcType="VARCHAR" />
+    <result column="Generated" property="generated" jdbcType="VARCHAR" />
+    <result column="invitation" property="invitation" jdbcType="VARCHAR" />
+    <result column="credits" property="credits" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="txpath" property="txpath" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, username, mobile, password, Privilege, location, superior, Depth, Path, revenue, 
+    consume, Generated, invitation, credits, date, txpath
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.oxygen.shop.common.po.UserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.oxygen.shop.common.po.UserExample" >
+    delete from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.oxygen.shop.common.po.User" >
+    insert into user (id, username, mobile, 
+      password, Privilege, location, 
+      superior, Depth, Path, 
+      revenue, consume, Generated, 
+      invitation, credits, date, 
+      txpath)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{privilege,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, 
+      #{superior,jdbcType=VARCHAR}, #{depth,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{revenue,jdbcType=VARCHAR}, #{consume,jdbcType=VARCHAR}, #{generated,jdbcType=VARCHAR}, 
+      #{invitation,jdbcType=VARCHAR}, #{credits,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, 
+      #{txpath,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oxygen.shop.common.po.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="privilege != null" >
+        Privilege,
+      </if>
+      <if test="location != null" >
+        location,
+      </if>
+      <if test="superior != null" >
+        superior,
+      </if>
+      <if test="depth != null" >
+        Depth,
+      </if>
+      <if test="path != null" >
+        Path,
+      </if>
+      <if test="revenue != null" >
+        revenue,
+      </if>
+      <if test="consume != null" >
+        consume,
+      </if>
+      <if test="generated != null" >
+        Generated,
+      </if>
+      <if test="invitation != null" >
+        invitation,
+      </if>
+      <if test="credits != null" >
+        credits,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="txpath != null" >
+        txpath,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="privilege != null" >
+        #{privilege,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="superior != null" >
+        #{superior,jdbcType=VARCHAR},
+      </if>
+      <if test="depth != null" >
+        #{depth,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="revenue != null" >
+        #{revenue,jdbcType=VARCHAR},
+      </if>
+      <if test="consume != null" >
+        #{consume,jdbcType=VARCHAR},
+      </if>
+      <if test="generated != null" >
+        #{generated,jdbcType=VARCHAR},
+      </if>
+      <if test="invitation != null" >
+        #{invitation,jdbcType=VARCHAR},
+      </if>
+      <if test="credits != null" >
+        #{credits,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="txpath != null" >
+        #{txpath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.oxygen.shop.common.po.UserExample" resultType="java.lang.Integer" >
+    select count(*) from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null" >
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.privilege != null" >
+        Privilege = #{record.privilege,jdbcType=VARCHAR},
+      </if>
+      <if test="record.location != null" >
+        location = #{record.location,jdbcType=VARCHAR},
+      </if>
+      <if test="record.superior != null" >
+        superior = #{record.superior,jdbcType=VARCHAR},
+      </if>
+      <if test="record.depth != null" >
+        Depth = #{record.depth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.path != null" >
+        Path = #{record.path,jdbcType=VARCHAR},
+      </if>
+      <if test="record.revenue != null" >
+        revenue = #{record.revenue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.consume != null" >
+        consume = #{record.consume,jdbcType=VARCHAR},
+      </if>
+      <if test="record.generated != null" >
+        Generated = #{record.generated,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invitation != null" >
+        invitation = #{record.invitation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.credits != null" >
+        credits = #{record.credits,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.txpath != null" >
+        txpath = #{record.txpath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user
+    set id = #{record.id,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      Privilege = #{record.privilege,jdbcType=VARCHAR},
+      location = #{record.location,jdbcType=VARCHAR},
+      superior = #{record.superior,jdbcType=VARCHAR},
+      Depth = #{record.depth,jdbcType=VARCHAR},
+      Path = #{record.path,jdbcType=VARCHAR},
+      revenue = #{record.revenue,jdbcType=VARCHAR},
+      consume = #{record.consume,jdbcType=VARCHAR},
+      Generated = #{record.generated,jdbcType=VARCHAR},
+      invitation = #{record.invitation,jdbcType=VARCHAR},
+      credits = #{record.credits,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      txpath = #{record.txpath,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oxygen.shop.common.po.User" >
+    update user
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="privilege != null" >
+        Privilege = #{privilege,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="superior != null" >
+        superior = #{superior,jdbcType=VARCHAR},
+      </if>
+      <if test="depth != null" >
+        Depth = #{depth,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        Path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="revenue != null" >
+        revenue = #{revenue,jdbcType=VARCHAR},
+      </if>
+      <if test="consume != null" >
+        consume = #{consume,jdbcType=VARCHAR},
+      </if>
+      <if test="generated != null" >
+        Generated = #{generated,jdbcType=VARCHAR},
+      </if>
+      <if test="invitation != null" >
+        invitation = #{invitation,jdbcType=VARCHAR},
+      </if>
+      <if test="credits != null" >
+        credits = #{credits,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="txpath != null" >
+        txpath = #{txpath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oxygen.shop.common.po.User" >
+    update user
+    set username = #{username,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      Privilege = #{privilege,jdbcType=VARCHAR},
+      location = #{location,jdbcType=VARCHAR},
+      superior = #{superior,jdbcType=VARCHAR},
+      Depth = #{depth,jdbcType=VARCHAR},
+      Path = #{path,jdbcType=VARCHAR},
+      revenue = #{revenue,jdbcType=VARCHAR},
+      consume = #{consume,jdbcType=VARCHAR},
+      Generated = #{generated,jdbcType=VARCHAR},
+      invitation = #{invitation,jdbcType=VARCHAR},
+      credits = #{credits,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      txpath = #{txpath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

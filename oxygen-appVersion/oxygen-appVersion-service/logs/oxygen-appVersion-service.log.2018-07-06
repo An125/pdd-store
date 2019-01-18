@@ -1,0 +1,24 @@
+[INFO ][20180706 14:49:14,276][AbstractApplicationContext:583] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7a3d45bd: startup date [Fri Jul 06 14:49:14 CST 2018]; root of context hierarchy
+[INFO ][20180706 14:49:14,333][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180706 14:49:14,569][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180706 14:49:14,607][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180706 14:49:14,632][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180706 14:49:15,490][DruidDataSource:669] {dataSource-1} inited
+[INFO ][20180706 14:49:48,080][AbstractApplicationContext:583] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f150435: startup date [Fri Jul 06 14:49:48 CST 2018]; root of context hierarchy
+[INFO ][20180706 14:49:48,131][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180706 14:49:48,302][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180706 14:49:48,334][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180706 14:49:48,354][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180706 14:49:48,993][DruidDataSource:669] {dataSource-1} inited
+[INFO ][20180706 14:55:09,866][AbstractApplicationContext:583] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@543c6f6d: startup date [Fri Jul 06 14:55:09 CST 2018]; root of context hierarchy
+[INFO ][20180706 14:55:09,919][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180706 14:55:10,097][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180706 14:55:10,133][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180706 14:55:10,159][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180706 14:55:10,903][DruidDataSource:669] {dataSource-1} inited
+[INFO ][20180706 16:41:21,606][AbstractApplicationContext:583] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@543c6f6d: startup date [Fri Jul 06 16:41:21 CST 2018]; root of context hierarchy
+[INFO ][20180706 16:41:21,707][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-context.xml]
+[INFO ][20180706 16:41:21,947][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/dubbo-provider.xml]
+[INFO ][20180706 16:41:22,019][?:?] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+[INFO ][20180706 16:41:22,057][XmlBeanDefinitionReader:317] Loading XML bean definitions from class path resource [spring/spring-mybatis.xml]
+[INFO ][20180706 16:41:23,219][DruidDataSource:669] {dataSource-1} inited

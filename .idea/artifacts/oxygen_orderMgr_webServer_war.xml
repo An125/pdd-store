@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oxygen-orderMgr-webServer:war">
+    <output-path>$PROJECT_DIR$/oxygen-orderMgr/oxygen-orderMgr-webServer/target</output-path>
+    <root id="archive" name="oxygen-orderMgr-webServer.war">
+      <element id="artifact" artifact-name="oxygen-orderMgr-webServer:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 加载配置文件 -->
+	<!-- 将多个配置文件读取到容器中，交给Spring管理 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 基于Druid数据库链接池的数据源配置 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<!-- 基本属性driverClassName、 url、user、password -->
+		<property name="driverClassName" value="${jdbc.appVersion.driver}" />
+		<property name="url" value="${jdbc.appVersion.url}" />
+		<property name="username" value="${jdbc.appVersion.username}" />
+		<property name="password" value="${jdbc.appVersion.password}" />
+		<!-- 配置初始化大小、最小、最大 -->
+		<!-- 通常来说，只需要修改initialSize、minIdle、maxActive -->
+		<property name="initialSize" value="2" />
+		<property name="minIdle" value="2" />
+		<property name="maxActive" value="30" />
+		<property name="testWhileIdle" value="false" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="5000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="30000" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 解密密码必须要配置的项 -->
+		<!-- <property name="filters" value="config" /> <property name="connectionProperties" 
+			value="config.decrypt=true" /> -->
+	</bean>
+
+	<!-- 将数据源映射到sqlSessionFactory中 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
+		<!-- 自动扫描mapping.xml文件 -->
+        <property name="mapperLocations" value="classpath:com/pdd/appVersion/service/mapper/*.xml"></property>
+	</bean>
+
+
+	<!-- MapperScannerConfigurer：mapper的扫描器，将包下边的mapper接口自动创建代理对象， 自动创建到spring容器中，bean的id是mapper的类名（首字母小写） -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 配置扫描包的路径 如果要扫描多个包，中间使用半角逗号分隔 -->
+		<property name="basePackage" value="com.pdd.appVersion.service.mapper" />
+		<!-- 使用sqlSessionFactoryBeanName -->
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+	<!-- SqlSession模板类实例 -->
+<!-- 	<bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"
+		destroy-method="close">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean> -->
+
+	<!--======= 事务配置 Begin ================= -->
+	<!-- 事务管理器（由Spring管理MyBatis的事务） -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 关联数据源 -->
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 第一种方式: 注解方式配置事物 -->
+    <!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+
+	<!-- 第二种方式: 拦截器方式配置事物 -->
+    <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add*" />
+            <tx:method name="save*" />
+            <tx:method name="update*" />
+            <tx:method name="modify*" />
+            <tx:method name="edit*" />
+            <tx:method name="delete*" />
+            <tx:method name="remove*" />
+            <tx:method name="repair" />
+            <tx:method name="deleteAndRepair" />
+
+            <tx:method name="get*" propagation="SUPPORTS" />
+            <tx:method name="find*" propagation="SUPPORTS" />
+            <tx:method name="load*" propagation="SUPPORTS" />
+            <tx:method name="search*" propagation="SUPPORTS" />
+            <tx:method name="datagrid*" propagation="SUPPORTS" />
+
+            <tx:method name="*" propagation="SUPPORTS" />
+        </tx:attributes>
+    </tx:advice>
+    
+    <!-- Spring AOP config 解释一下 (* com.evan.crm.service.*.*(..)) 中几个通配符的含义： -->
+    <!-- 第一个 * —— 通配 任意返回值类型 -->
+    <!-- 第二个 * —— 通配 包com.evan.crm.service下的任意class -->
+    <!-- 第三个 * —— 通配包com.evan.crm.service下的任意class的任意方法 -->
+    <!-- 第四个 .. —— 通配 方法可以有0个或多个参数 -->
+    <!-- 事务控制位置，一般在业务层service -->
+    <aop:config>
+        <aop:pointcut id="transactionPointcut" expression="execution(* com.pdd.appVersion.api.service.*.*.*(..))" />
+            <!-- 多个 expression="(execution(* com.weixin.web.service..*Impl.*(..)))or(execution(* org.weixin.service..*Impl.*(..)))" -->
+        <aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
+    </aop:config>
+</beans>

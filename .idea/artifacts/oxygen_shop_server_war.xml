@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oxygen-shop-server:war">
+    <output-path>$PROJECT_DIR$/oxygen-shop/oxygen-shop-server/target</output-path>
+    <root id="archive" name="oxygen-shop-server.war">
+      <element id="artifact" artifact-name="oxygen-shop-server:war exploded" />
+    </root>
+  </artifact>
+</component>

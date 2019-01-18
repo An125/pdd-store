@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <description>oxygen-upms</description>
+
+    <context:property-placeholder location="classpath*:oxygen-upms-shiro.properties"/>
+
+    <!-- Shiro的Web过滤器 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="${oxygen.upms.sso.server.url}"/>
+        <property name="successUrl" value="${oxygen.upms.successUrl}"/>
+        <property name="unauthorizedUrl" value="${oxygen.upms.unauthorizedUrl}"/>
+        <property name="filters">
+            <util:map>
+                <entry key="authc" value-ref="upmsAuthenticationFilter"/>
+            </util:map>
+        </property>
+        <property name="filterChainDefinitions">
+            <value>
+                /manage/** = upmsSessionForceLogout,authc
+                /manage/index = user
+                /druid/** = user
+                /swagger-ui.html = user
+                /resources/** = anon
+                /** = anon
+            </value>
+        </property>
+    </bean>
+
+    <!-- 重写authc过滤器 -->
+    <bean id="upmsAuthenticationFilter" class="com.oxygen.upms.shiro.shiro.filter.UpmsAuthenticationFilter"/>
+
+    <!-- 强制退出会话过滤器 -->
+    <bean id="upmsSessionForceLogout" class="com.oxygen.upms.shiro.shiro.filter.UpmsSessionForceLogoutFilter"/>
+
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realms">
+            <list>
+                <ref bean="upmsRealm"/>
+            </list>
+        </property>
+        <property name="cacheManager" ref="shiroEhcacheManager" />
+        <property name="rememberMeManager" ref="rememberMeManager"/>
+    </bean>
+
+    <!-- realm实现，继承自AuthorizingRealm -->
+    <bean id="upmsRealm" class="com.oxygen.upms.shiro.shiro.realm.UpmsRealm"></bean>
+
+    <!-- 用户授权信息Cache, 采用EhCache -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:shiro-ehcache.xml"/>
+    </bean>
+
+    <!-- rememberMe管理器 -->
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <!-- rememberMe cookie加密的密钥 建议每个项目都不一样 默认AES算法 密钥长度（128 256 512 位）-->
+        <property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}"/>
+        <property name="cookie" ref="rememberMeCookie"/>
+    </bean>
+
+    <!-- 会话Cookie模板 -->
+    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <!-- 不会暴露给客户端 -->
+        <property name="httpOnly" value="true"/>
+        <!-- 设置Cookie的过期时间，秒为单位，默认-1表示关闭浏览器时过期Cookie -->
+        <property name="maxAge" value="-1"/>
+        <!-- Cookie名称 -->
+        <property name="name" value="${oxygen.upms.session.id}"/>
+    </bean>
+
+    <!-- 会话监听器 -->
+    <bean id="sessionListener" class="com.oxygen.upms.shiro.shiro.listener.UpmsSessionListener"/>
+
+    <!-- rememberMe缓存cookie -->
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <!-- 不会暴露给客户端 -->
+        <property name="httpOnly" value="true"/>
+        <!-- 记住我cookie生效时间 -->
+        <property name="maxAge" value="${oxygen.upms.rememberMe.timeout}"/>
+    </bean>
+
+    <!-- 设置SecurityUtils，相当于调用SecurityUtils.setSecurityManager(securityManager) -->
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
+        <property name="arguments" ref="securityManager"/>
+    </bean>
+
+    <!-- 开启Shiro Spring AOP权限注解@RequiresPermissions的支持 -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <!-- Shiro生命周期处理器-->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+
+</beans>
